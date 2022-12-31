@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate/navbar/main_screen.dart';
 
+import '../../screens/welcome_screen.dart';
+
 class AuthService{
   final FirebaseAuth _auth = FirebaseAuth.instance;
    
@@ -54,6 +56,15 @@ class AuthService{
       print(e.toString());
 
       
+    }
+   }
+
+   Future<void> logout(context)async{
+    try{
+      _auth.signOut();
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WelComeScreen(),));
+    }catch(e){
+      print(e.toString());
     }
    }
 }

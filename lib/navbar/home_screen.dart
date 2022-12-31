@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/widget/appText.dart';
+import 'package:real_estate/widget/service/auth_service.dart';
 
 import '../widget/home_card_widget.dart';
 
@@ -30,7 +31,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       color: Colors.black,
                       fontWeight: FontWeight.w700,
                       size: 30),
-                  const Icon(Icons.notifications_on)
+                   IconButton(onPressed:(() {
+                    AuthService().logout(context);
+                    
+                  }),icon:const Icon(Icons.logout))
                 ],
               )),
           Container(
