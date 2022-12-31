@@ -4,10 +4,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:real_estate/widget/appText.dart';
 import 'package:real_estate/widget/custom_textfield.dart';
 import 'package:real_estate/widget/custome_button.dart';
+import 'package:real_estate/widget/service/auth_service.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  TextEditingController mobileController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +29,7 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppText(
-                text: "Login with\nPhone Number",
+                text: "Login with\nEmail ID",
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 size: 36),
@@ -43,21 +45,33 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             CustomTextField(
-                hintText: "Enter Mobile",
-                controller: mobileController,
+                hintText: "Enter Email",
+                controller: emailController,
                 keyBoardType: TextInputType.phone),
+            const SizedBox(
+              height: 10,
+            ),
+            CustomTextField(
+                hintText: "Enter Password",
+                controller: passwordController,
+                keyBoardType: TextInputType.visiblePassword),
             Spacer(),
-            CustomButton(
-                isIcon: false,
-                textSize: 16,
-                radius: 25,
-                iconColor: Colors.black,
-                title: "Login",
-                borderColor: Colors.black,
-                backgroundColor: Colors.black,
-                height: 50,
-                width: double.maxFinite,
-                textColor: Colors.white),
+            InkWell(
+              onTap: () {
+                AuthService().loginWithEmail(context, emailController.text  , passwordController.text);
+              },
+              child: CustomButton(
+                  isIcon: false,
+                  textSize: 16,
+                  radius: 25,
+                  iconColor: Colors.black,
+                  title: "Login",
+                  borderColor: Colors.black,
+                  backgroundColor: Colors.black,
+                  height: 50,
+                  width: double.maxFinite,
+                  textColor: Colors.white),
+            ),
             SizedBox(
               height: 20,
             )

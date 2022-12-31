@@ -21,7 +21,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
-        hintText: "Enter Name",
+        hintText: hintText,
           border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15))
       ),

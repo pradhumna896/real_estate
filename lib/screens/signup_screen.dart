@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:real_estate/screens/login_screen.dart';
 import 'package:real_estate/widget/account_login_signup.dart';
 import 'package:real_estate/widget/custom_textfield.dart';
 import 'package:real_estate/widget/custome_button.dart';
@@ -66,7 +67,9 @@ class SignupScreen extends StatelessWidget {
                   }),
                   child: CustomButton(textSize: 16, radius: 25, iconColor: Colors.white, title: "Sign Up", borderColor:Colors.black, backgroundColor: Colors.black, height: 50, width: double.maxFinite, textColor: Colors.white,isIcon:false)),
                 const SizedBox(height: 30,),
-                AccountLoginSignup(onTap: (){}, title1: "Already have an account?", title2: "Login")
+                AccountLoginSignup(onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder:((context) => LoginScreen())));
+                }, title1: "Already have an account?", title2: "Login")
 
                 
               ],
