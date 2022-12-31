@@ -14,16 +14,22 @@ class AuthService{
     password
    )async{
     try{
-      final user = _auth.createUserWithEmailAndPassword(email: email, password: password);
-      if(user!=null){
+      final user =await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      if(email.isNotEmpty && password.isNotEmpty){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.green,
+          content: Text("Create account Successfully")));
         Navigator.push(context, MaterialPageRoute(
           builder:(context)=>MainScreen()
         ));
       }
 
     }catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(e.toString())));
       print(e.toString());
-      
+
       
     }
    }

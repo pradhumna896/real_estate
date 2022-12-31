@@ -52,100 +52,23 @@ class SignupScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                AppText(
-                    text: "Full Name",
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    size: 14),
-                const SizedBox(
-                  height: 5,
-                ),
-                CustomTextField(
-                  obscureText: false,
-                  controller: nameController,
-                  keyBoardType: TextInputType.name,
-                  hintText: "Enter name",
-                ),
-                const SizedBox(height: 10,),
-                AppText(
-                    text: "Mobile",
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    size: 14),
-                const SizedBox(
-                  height: 5,
-                ),
-                CustomTextField(
-                  obscureText: false,
-                  controller: mobileController,
-                  keyBoardType: TextInputType.name,
-                  hintText: "ENter Mobile",
-                ),
-                const SizedBox(height: 10,),
-                AppText(
-                    text: "Email",
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    size: 14),
-                const SizedBox(
-                  height: 5,
-                ),
-                CustomTextField(
-                  obscureText: false,
-                  controller: emailController,
-                  keyBoardType: TextInputType.name,
-                  hintText: "Enter Email",
-                ),
-                const SizedBox(height: 10,),
-                AppText(
-                    text: "Password",
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    size: 14),
-                const SizedBox(
-                  height: 5,
-                ),
-                CustomTextField(
-                  obscureText: true,
-                  controller: passwordController,
-                  keyBoardType: TextInputType.name,
-                  hintText: "Enter Password",
-                ),
+                buildForm(),
                 const SizedBox(
                   height: 30,
                 ),
                 InkWell(
-                    onTap: (() {
-                      print("object");
-                      print(nameController.text);
-                      print(mobileController.text);
+                  onTap: (() {
+                    print(nameController.text);
+                     print(mobileController.text);
                       print(emailController.text);
-                      print(passwordController.text);
-                      AuthService().signupWithEmail(
-                          context,
-                          nameController.text,
-                          mobileController.text,
-                          emailController.text,
-                          passwordController.text);
-                    }),
-                    child: CustomButton(
-                        textSize: 16,
-                        radius: 25,
-                        iconColor: Colors.white,
-                        title: "Sign Up",
-                        borderColor: Colors.black,
-                        backgroundColor: Colors.black,
-                        height: 50,
-                        width: double.maxFinite,
-                        textColor: Colors.white,
-                        isIcon: false)),
-                const SizedBox(
-                  height: 30,
-                ),
-                AccountLoginSignup(
-                    onTap: () {},
-                    title1: "Already have an account?",
-                    title2: "Login")
+                       print(passwordController.text);
+                    AuthService().signupWithEmail(context, nameController.text.trim() , mobileController.text.trim(), emailController.text.trim(), passwordController.text.trim());
+                  }),
+                  child: CustomButton(textSize: 16, radius: 25, iconColor: Colors.white, title: "Sign Up", borderColor:Colors.black, backgroundColor: Colors.black, height: 50, width: double.maxFinite, textColor: Colors.white,isIcon:false)),
+                const SizedBox(height: 30,),
+                AccountLoginSignup(onTap: (){}, title1: "Already have an account?", title2: "Login")
+
+                
               ],
             ),
           ),
@@ -153,4 +76,43 @@ class SignupScreen extends StatelessWidget {
       ),
     );
   }
+
+  buildForm(){
+  return Column(children: [
+    buildTextContainer(false,"Full Name","Enter Name",nameController,TextInputType.name),
+    const SizedBox(height: 20,),
+    buildTextContainer(false,"Mobile","Enter Mobile",mobileController,TextInputType.name),
+    const SizedBox(height: 20,),
+    buildTextContainer(false,"Email", "Enter Email",emailController,TextInputType.name),
+    const SizedBox(height: 20,),
+    buildTextContainer(true,"Password","Enter Password",passwordController,TextInputType.visiblePassword),
+    
+  ],);
 }
+ 
+buildTextContainer(bool obs,String text ,String labelText, TextEditingController controller , TextInputType keyBoardType){
+
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      AppText(
+                  text: text,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  size: 14),
+              const SizedBox(
+                height: 5,
+              ),
+              CustomTextField(
+                obscureText:obs ,
+                controller: controller,
+                keyBoardType: TextInputType.name,
+                hintText: labelText,
+              ),
+  ],);
+
+}
+
+}
+
+
