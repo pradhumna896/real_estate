@@ -40,7 +40,7 @@ class WelComeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   CustomButton(
-                    radius: 25,
+                      radius: 25,
                       iconColor: Colors.white,
                       icon: Icons.mobile_friendly,
                       textSize: 18,
@@ -52,9 +52,9 @@ class WelComeScreen extends StatelessWidget {
                       textColor: Colors.white),
                   const SizedBox(
                     height: 20,
-                  ),    
+                  ),
                   CustomButton(
-                    radius: 25,
+                      radius: 25,
                       iconColor: Colors.blue,
                       icon: Icons.facebook,
                       textSize: 18,
@@ -66,9 +66,9 @@ class WelComeScreen extends StatelessWidget {
                       textColor: Colors.black),
                   const SizedBox(
                     height: 20,
-                  ),     
+                  ),
                   CustomButton(
-                    radius: 25,
+                      radius: 25,
                       iconColor: Colors.blue,
                       icon: Icons.facebook,
                       textSize: 18,
@@ -77,19 +77,21 @@ class WelComeScreen extends StatelessWidget {
                       backgroundColor: Colors.white,
                       height: 50,
                       width: double.maxFinite,
-                      textColor: Colors.black)   ,
-
+                      textColor: Colors.black),
                   const SizedBox(
                     height: 40,
                   ),
                   AccountLoginSignup(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen(),));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignupScreen(),
+                          ));
                     },
                     title1: "Don't have an account?",
                     title2: "SignUp",
                   )
-
                 ],
               ),
             ),
