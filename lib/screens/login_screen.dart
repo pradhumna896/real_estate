@@ -5,6 +5,7 @@ import 'package:real_estate/widget/custome_button.dart';
 import 'package:real_estate/widget/service/auth_service.dart';
 
 
+// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   TextEditingController emailController = TextEditingController();
@@ -54,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                 hintText: "Enter Password",
                 controller: passwordController,
                 keyBoardType: TextInputType.visiblePassword),
-            Spacer(),
+            const Spacer(),
             InkWell(
               onTap: () {
                 AuthService().loginWithEmail(context, emailController.text  , passwordController.text);

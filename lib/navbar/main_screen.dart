@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:real_estate/navbar/favrote_screen.dart';
 import 'package:real_estate/navbar/home_screen.dart';
 import 'package:real_estate/navbar/profile_screen.dart';
