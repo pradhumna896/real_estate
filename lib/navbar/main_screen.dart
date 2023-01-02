@@ -15,10 +15,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List pages = [
-    HomePage(),
-    FavoriteScreen(),
-    DiscoverScreen(),
-    ProfileScreen()
+    const HomePage(),
+    const FavoriteScreen(),
+    const DiscoverScreen(),
+    const ProfileScreen()
   ];
   int currentIndex = 0;
   onTap(index){

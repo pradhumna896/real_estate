@@ -36,7 +36,7 @@ class homeCardWidget extends StatelessWidget {
                           fontWeight: FontWeight.w700),
                       children: [
                     TextSpan(
-                        text: "/ year",
+                        text: "/year",
                         style: TextStyle(
                             color: Colors.black26,
                             fontSize: 18,

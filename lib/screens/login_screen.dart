@@ -4,7 +4,7 @@ import 'package:real_estate/widget/custom_textfield.dart';
 import 'package:real_estate/widget/custome_button.dart';
 import 'package:real_estate/widget/service/auth_service.dart';
 
-// ignore: must_be_immutable
+
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   TextEditingController emailController = TextEditingController();
