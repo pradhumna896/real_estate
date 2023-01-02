@@ -21,7 +21,7 @@ class AccountLoginSignup extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
            Text(title1),
-           Text(title2,style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)
+           Text(title2,style: const TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),)
         ],),
       ),
     );

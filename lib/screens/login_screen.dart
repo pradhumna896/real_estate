@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:real_estate/widget/appText.dart';
 import 'package:real_estate/widget/custom_textfield.dart';
 import 'package:real_estate/widget/custome_button.dart';
 import 'package:real_estate/widget/service/auth_service.dart';
 
+// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
   TextEditingController emailController = TextEditingController();
@@ -37,7 +36,7 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             AppText(
-                text: "Please enter your phone number correctly",
+                text: "Please enter your Email Id correctly",
                 color: Colors.black.withOpacity(0.6),
                 fontWeight: FontWeight.bold,
                 size: 16),
@@ -72,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                   width: double.maxFinite,
                   textColor: Colors.white),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

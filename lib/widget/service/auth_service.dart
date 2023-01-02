@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate/navbar/main_screen.dart';
 
@@ -18,11 +17,11 @@ class AuthService{
     try{
       final user = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       if(email.isNotEmpty && password.isNotEmpty){
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           backgroundColor: Colors.green,
           content: Text("Create account Successfully")));
         Navigator.push(context, MaterialPageRoute(
-          builder:(context)=>MainScreen()
+          builder:(context)=>const MainScreen()
         ));
       }
 
@@ -41,11 +40,11 @@ class AuthService{
       try{
       final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
       if(email.isNotEmpty && password.isNotEmpty){
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           backgroundColor: Colors.green,
           content: Text("Login Successfully")));
         Navigator.push(context, MaterialPageRoute(
-          builder:(context)=>MainScreen()
+          builder:(context)=>const MainScreen()
         ));
       }
 
@@ -62,7 +61,7 @@ class AuthService{
    Future<void> logout(context)async{
     try{
       _auth.signOut();
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WelComeScreen(),));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const WelComeScreen(),));
     }catch(e){
       print(e.toString());
     }

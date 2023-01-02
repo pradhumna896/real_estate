@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:real_estate/screens/signup_screen.dart';
 import 'package:real_estate/widget/custome_button.dart';
-
 import '../widget/account_login_signup.dart';
 
 class WelComeScreen extends StatelessWidget {
@@ -31,7 +28,7 @@ class WelComeScreen extends StatelessWidget {
           right: 0,
           top: size.height * 0.5,
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),

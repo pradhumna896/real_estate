@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/widget/appText.dart';
 import 'package:real_estate/widget/service/auth_service.dart';
-
 import '../widget/home_card_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -79,7 +78,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             itemCount: 5,
            
             itemBuilder: (context,index){
-            return homeCardWidget();
+            return const homeCardWidget();
           }))
         ],
       ),
