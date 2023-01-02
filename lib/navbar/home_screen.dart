@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             itemCount: 5,
            
             itemBuilder: (context,index){
-            return const homeCardWidget();
+            return const HomeCardWidget();
           }))
         ],
       ),

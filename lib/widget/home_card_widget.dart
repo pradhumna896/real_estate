@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/widget/appText.dart';
 
-class homeCardWidget extends StatelessWidget {
-  const homeCardWidget({
+class HomeCardWidget extends StatelessWidget {
+  const HomeCardWidget({
     Key? key,
   }) : super(key: key);
 
