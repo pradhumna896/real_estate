@@ -23,7 +23,12 @@ class HomeCardWidget extends StatelessWidget {
                 ),
                 image: DecorationImage(
                     image: AssetImage("image/home.jpg"), fit: BoxFit.cover)),
-          ),
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      alignment: Alignment.topRight,
+                    child:const Icon(Icons.favorite,color: Colors.red,),
+                    ),
+                    ),
           const SizedBox(height: 10,),
           Row(
             children: [

@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate/navbar/main_screen.dart';
+import 'package:real_estate/screens/login_screen.dart';
+import '../../helper/helper_function.dart';
 import '../../screens/welcome_screen.dart';
 
 class AuthService {
@@ -15,7 +17,7 @@ class AuthService {
             backgroundColor: Colors.green,
             content: Text("Create account Successfully")));
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const MainScreen()));
+            MaterialPageRoute(builder: (context) =>  LoginScreen()));
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -29,6 +31,7 @@ class AuthService {
       final user = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       if (email.isNotEmpty && password.isNotEmpty) {
+        await HelperFunctions.saveUserLoggedInStatus(true);
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             backgroundColor: Colors.green,
             content: Text("Login Successfully")));
@@ -44,6 +47,7 @@ class AuthService {
 
   Future<void> logout(context) async {
     try {
+      await HelperFunctions.saveUserLoggedInStatus(false);
       _auth.signOut();
       Navigator.pushReplacement(
           context,
