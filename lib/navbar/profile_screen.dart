@@ -10,29 +10,30 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children:  [
-           const CircleAvatar(
-            radius: 60,
-            backgroundImage: AssetImage("image/home.jpg"),
-            
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 90,right:20,top: 20),
-            child: Column(children: [
-              Row(
-                
-                children: [
-                Text("name:",),
-                const SizedBox(width: 10,),
-                Text("john"),
-              ],)
-            ],),
-          )
-        ],
-      ),
+    double height = MediaQuery.of(context).size.height;
+    return Stack(
+      children: [
+        Positioned(
+            left: 0,
+            right: 0,
+            top: 0,
+            height: height * 0.4,
+            child: Container(
+                decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("image/home.jpg"), fit: BoxFit.cover),
+            ))),
+        Positioned(
+          left: 0, 
+          right: 0, 
+          bottom: 0,
+          top: height*0.35,
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(topRight: Radius.circular(10)),
+              color:Colors.red),
+          ))
+      ],
     );
   }
 }
