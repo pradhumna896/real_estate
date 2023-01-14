@@ -53,7 +53,7 @@ bool _isSignedIn = false;
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: _isSignedIn?MainScreen():WelComeScreen(),
+      home: _isSignedIn?const MainScreen():const WelComeScreen(),
     );
   }
 }
