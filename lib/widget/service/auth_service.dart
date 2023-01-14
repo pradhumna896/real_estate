@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:real_estate/navbar/main_screen.dart';
 import 'package:real_estate/screens/login_screen.dart';
 import '../../helper/helper_function.dart';
@@ -7,6 +8,7 @@ import '../../screens/welcome_screen.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   Future<void> signupWithEmail(context, name, mobile, email, password) async {
     try {
@@ -57,5 +59,12 @@ class AuthService {
     } catch (e) {
       print(e.toString());
     }
+  }
+
+
+  Future loginWithGoogle()async{
+    try{
+      
+    }catch(e){}
   }
 }
