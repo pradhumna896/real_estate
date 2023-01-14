@@ -10,6 +10,29 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child:Text("profile"));;
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:  [
+           const CircleAvatar(
+            radius: 60,
+            backgroundImage: AssetImage("image/home.jpg"),
+            
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 90,right:20,top: 20),
+            child: Column(children: [
+              Row(
+                
+                children: [
+                Text("name:",),
+                const SizedBox(width: 10,),
+                Text("john"),
+              ],)
+            ],),
+          )
+        ],
+      ),
+    );
   }
 }

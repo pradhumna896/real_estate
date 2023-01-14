@@ -10,6 +10,6 @@ class DiscoverScreen extends StatefulWidget {
 class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child:Text("search"));;
+    return const Center(child: Text("Discover Location"));
   }
 }
