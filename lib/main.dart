@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate/helper/helper_function.dart';
-import 'package:real_estate/helper/sessionmanager.dart';
 import 'package:real_estate/navbar/main_screen.dart';
 import 'package:real_estate/screens/welcome_screen.dart';
 
@@ -28,12 +27,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-bool _isSignedIn = false;
-@override
+  bool _isSignedIn = false;
+  @override
   void initState() {
     getUserLoggedInStatus();
     super.initState();
   }
+
   getUserLoggedInStatus() async {
     await HelperFunctions.getUserLoggedInStatus().then((value) {
       if (value != null) {
@@ -44,7 +44,6 @@ bool _isSignedIn = false;
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,7 +52,7 @@ bool _isSignedIn = false;
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: _isSignedIn?const MainScreen():const WelComeScreen(),
+      home: _isSignedIn ? const MainScreen() : const WelComeScreen(),
     );
   }
 }
